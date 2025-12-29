@@ -45,7 +45,7 @@ const SocketController = () => {
       dispatch(eventsActions.add(events));
     }
     if (events.some((e) => soundEvents.includes(e.type)
-        || (e.type === 'alarm' && soundAlarms.includes(e.attributes.alarm)))) {
+      || (e.type === 'alarm' && soundAlarms.includes(e.attributes.alarm)))) {
       new Audio(alarm).play();
     }
     setNotifications(events.map((event) => ({
@@ -61,7 +61,8 @@ const SocketController = () => {
       socketRef.current.close();
     }
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const socket = new WebSocket(`${protocol}//${window.location.host}/api/socket`);
+    const url = `${protocol}//${window.location.host}/api/socket`;
+    const socket = new WebSocket(url);
     socketRef.current = socket;
 
     socket.onopen = () => {
