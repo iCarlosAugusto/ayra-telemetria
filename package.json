@@ -38,8 +38,9 @@
     "wellknown": "^0.5.0"
   },
   "scripts": {
-    "start": "vite --host",
+    "dev": "vite --host",
     "build": "vite build",
+    "preview": "vite preview",
     "generate-pwa-assets": "pwa-assets-generator --preset minimal public/logo.svg",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."

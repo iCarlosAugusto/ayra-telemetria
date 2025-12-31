@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
     server: {
-      port: 3000,
+      // port: 3000,
       proxy: {
         '/api/socket': {
           target: "https://ayra-telemetria-api.onrender.com",
