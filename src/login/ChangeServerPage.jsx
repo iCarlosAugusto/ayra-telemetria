@@ -27,7 +27,7 @@ const officialServers = [
   'https://demo3.traccar.org',
   'https://demo4.traccar.org',
   'https://server.traccar.org',
-  'http://localhost:8082',
+  import.meta.env.API_URL,
   'http://localhost:3000',
 ].filter((value, index, self) => self.indexOf(value) === index);
 
