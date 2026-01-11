@@ -16,6 +16,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import PaymentIcon from '@mui/icons-material/Payment';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import CalculateIcon from '@mui/icons-material/Calculate';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from '../../common/components/LocalizationProvider';
@@ -113,6 +114,12 @@ const SettingsMenu = () => {
                 selected={location.pathname.startsWith('/settings/maintenance')}
               />
             )}
+            <MenuItem
+              title={t('sharedFines')}
+              link="/settings/fines"
+              icon={<ReceiptLongIcon />}
+              selected={location.pathname.startsWith('/settings/fine')}
+            />
             {!features.disableSavedCommands && (
               <MenuItem
                 title={t('sharedSavedCommands')}

@@ -30,6 +30,8 @@ import ComputedAttributesPage from './settings/ComputedAttributesPage';
 import ComputedAttributePage from './settings/ComputedAttributePage';
 import MaintenancesPage from './settings/MaintenancesPage';
 import MaintenancePage from './settings/MaintenancePage';
+import FinesPage from './settings/FinesPage';
+import FinePage from './settings/FinePage';
 import CommandsPage from './settings/CommandsPage';
 import CommandPage from './settings/CommandPage';
 import StatisticsPage from './reports/StatisticsPage';
@@ -157,6 +159,9 @@ const Navigation = () => {
           <Route path="maintenances" element={<MaintenancesPage />} />
           <Route path="maintenance/:id" element={<MaintenancePage />} />
           <Route path="maintenance" element={<MaintenancePage />} />
+          <Route path="fines" element={<FinesPage />} />
+          <Route path="fine/:id" element={<FinePage />} />
+          <Route path="fine" element={<FinePage />} />
           <Route path="notifications" element={<NotificationsPage />} />
           <Route path="notification/:id" element={<NotificationPage />} />
           <Route path="notification" element={<NotificationPage />} />
