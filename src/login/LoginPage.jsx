@@ -99,6 +99,11 @@ const LoginPage = () => {
         const user = await response.json();
         generateLoginToken();
         dispatch(sessionActions.updateUser(user));
+        // Fetch user modules
+        const modulesResponse = await fetch('/api/session/modules');
+        if (modulesResponse.ok) {
+          dispatch(sessionActions.updateModules(await modulesResponse.json()));
+        }
         const target = window.sessionStorage.getItem('postLogin') || '/';
         window.sessionStorage.removeItem('postLogin');
         navigate(target, { replace: true });

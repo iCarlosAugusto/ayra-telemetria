@@ -52,6 +52,11 @@ const App = () => {
       const response = await fetch('/api/session');
       if (response.ok) {
         dispatch(sessionActions.updateUser(await response.json()));
+        // Fetch user modules
+        const modulesResponse = await fetch('/api/session/modules');
+        if (modulesResponse.ok) {
+          dispatch(sessionActions.updateModules(await modulesResponse.json()));
+        }
       } else {
         window.sessionStorage.setItem('postLogin', pathname + search);
         navigate(newServer ? '/register' : '/login', { replace: true });

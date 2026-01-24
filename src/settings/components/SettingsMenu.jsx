@@ -24,6 +24,7 @@ import {
   useAdministrator, useManager, useRestriction,
 } from '../../common/util/permissions';
 import useFeatures from '../../common/util/useFeatures';
+import { useHasModule } from '../../common/util/useModules';
 import MenuItem from '../../common/components/MenuItem';
 
 const SettingsMenu = () => {
@@ -38,6 +39,7 @@ const SettingsMenu = () => {
   const billingLink = useSelector((state) => state.session.user.attributes.billingLink);
 
   const features = useFeatures();
+  const hasFinesModule = useHasModule('FINES');
 
   return (
     <>
@@ -114,12 +116,14 @@ const SettingsMenu = () => {
                 selected={location.pathname.startsWith('/settings/maintenance')}
               />
             )}
-            <MenuItem
-              title={t('sharedFines')}
-              link="/settings/fines"
-              icon={<ReceiptLongIcon />}
-              selected={location.pathname.startsWith('/settings/fine')}
-            />
+            {hasFinesModule && (
+              <MenuItem
+                title={t('sharedFines')}
+                link="/settings/fines"
+                icon={<ReceiptLongIcon />}
+                selected={location.pathname.startsWith('/settings/fine')}
+              />
+            )}
             {!features.disableSavedCommands && (
               <MenuItem
                 title={t('sharedSavedCommands')}

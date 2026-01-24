@@ -52,6 +52,10 @@ const CollectionActions = ({
     }
   };
 
+  const handleNavigateToModules = () => {
+    navigate("/modules");
+  }
+
   return (
     <>
       {phone ? (
@@ -96,6 +100,13 @@ const CollectionActions = ({
               </Tooltip>
             </>
           )}
+          <>
+            <Tooltip title={t('sharedEdit')}>
+              <IconButton size="small" onClick={handleNavigateToModules}>
+                <span>Modules</span>
+              </IconButton>
+            </Tooltip>
+          </>
         </div>
       )}
       <RemoveDialog style={{ transform: 'none' }} open={removing} endpoint={endpoint} itemId={itemId} onResult={handleRemoveResult} />

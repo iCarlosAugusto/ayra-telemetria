@@ -650,5 +650,6 @@
     "fineViolationDate": "Violation Date",
     "fineViolationTime": "Violation Time",
     "fineIssuingAuthority": "Issuing Authority",
-    "fineAddress": "Address"
+    "fineAddress": "Address",
+    "sharedModules": "Modules"
 }

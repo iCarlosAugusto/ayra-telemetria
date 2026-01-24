@@ -11,14 +11,14 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       proxy: {
         '/api/socket': {
-          target: "https://ayra-telemetria-api.onrender.com",
+          target: "http://localhost:8082",
           ws: true,
           changeOrigin: true,
           secure: false,
           rewriteWsOrigin: true,
         },
         '/api': {
-          target: "https://ayra-telemetria-api.onrender.com",
+          target: "http://localhost:8082",
           changeOrigin: true,
         },
       },

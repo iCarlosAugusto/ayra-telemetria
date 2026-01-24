@@ -40,6 +40,7 @@ import RegisterPage from './login/RegisterPage';
 import ResetPasswordPage from './login/ResetPasswordPage';
 import GeofencesPage from './other/GeofencesPage';
 import GeofencePage from './settings/GeofencePage';
+import ModulesPage from './settings/ModulesPage';
 import { useEffectAsync } from './reactHelper';
 import { devicesActions } from './store';
 import EventPage from './other/EventPage';
@@ -155,6 +156,7 @@ const Navigation = () => {
           <Route path="group/:id/connections" element={<GroupConnectionsPage />} />
           <Route path="group/:id/command" element={<CommandGroupPage />} />
           <Route path="group/:id" element={<GroupPage />} />
+          <Route path="group/:id/modules" element={<ModulesPage />} />
           <Route path="group" element={<GroupPage />} />
           <Route path="maintenances" element={<MaintenancesPage />} />
           <Route path="maintenance/:id" element={<MaintenancePage />} />
@@ -169,6 +171,7 @@ const Navigation = () => {
           <Route path="server" element={<ServerPage />} />
           <Route path="users" element={<UsersPage />} />
           <Route path="user/:id/connections" element={<UserConnectionsPage />} />
+          <Route path="user/:id/modules" element={<ModulesPage />} />
           <Route path="user/:id" element={<UserPage />} />
           <Route path="user" element={<UserPage />} />
         </Route>
