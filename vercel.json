@@ -2,7 +2,8 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "https://ayra-telemetria-api.onrender.com/api/:path*"
+            "destination": "http://76.13.164.109:8082/api/:path*"
         }
-    ]
+    ],
+    "outputDirectory": "build"
 }
