@@ -36,15 +36,6 @@ const GroupConnectionsPage = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails className={classes.details}>
-
-            <LinkField
-              endpointAll="/api/companies/modules"
-              endpointLinked={`/api/companies/modules`}
-              baseId={id}
-              keyBase="groupId"
-              keyLink="moduleId"
-              label={t('sharedModules')}
-            />
             <LinkField
               endpointAll="/api/geofences"
               endpointLinked={`/api/geofences?groupId=${id}`}

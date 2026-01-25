@@ -53,7 +53,7 @@ const CollectionActions = ({
   };
 
   const handleNavigateToModules = () => {
-    navigate("/modules");
+    navigate(`${editPath}/${itemId}/modules`);
   }
 
   return (
@@ -103,7 +103,7 @@ const CollectionActions = ({
           <>
             <Tooltip title={t('sharedEdit')}>
               <IconButton size="small" onClick={handleNavigateToModules}>
-                <span>Modules</span>
+                <span>Módulos</span>
               </IconButton>
             </Tooltip>
           </>
