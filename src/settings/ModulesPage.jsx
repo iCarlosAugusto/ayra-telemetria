@@ -84,7 +84,7 @@ const ModulesPage = () => {
 
                 if (entityType === 'group') {
                     // For groups, fetch all modules and assigned modules separately
-                    const allModulesResponse = await fetchOrThrow('/api/company/modules');
+                    const allModulesResponse = await fetchOrThrow('/api/companies/modules');
                     const allModulesData = await allModulesResponse.json();
 
                     const assignedResponse = await fetchOrThrow(`/api/groups/${id}/modules`);

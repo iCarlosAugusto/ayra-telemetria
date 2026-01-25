@@ -166,33 +166,33 @@ const SettingsMenu = () => {
           />
         )}
       </List>
-      {manager && (
-        <>
-          <Divider />
-          <List>
+      {/* {manager && ( */}
+      <>
+        <Divider />
+        <List>
+          <MenuItem
+            title={t('serverAnnouncement')}
+            link="/settings/announcement"
+            icon={<CampaignIcon />}
+            selected={location.pathname === '/settings/announcement'}
+          />
+          {admin && (
             <MenuItem
-              title={t('serverAnnouncement')}
-              link="/settings/announcement"
-              icon={<CampaignIcon />}
-              selected={location.pathname === '/settings/announcement'}
+              title={t('settingsServer')}
+              link="/settings/server"
+              icon={<SettingsIcon />}
+              selected={location.pathname === '/settings/server'}
             />
-            {admin && (
-              <MenuItem
-                title={t('settingsServer')}
-                link="/settings/server"
-                icon={<SettingsIcon />}
-                selected={location.pathname === '/settings/server'}
-              />
-            )}
-            <MenuItem
-              title={t('settingsUsers')}
-              link="/settings/users"
-              icon={<PeopleIcon />}
-              selected={location.pathname.startsWith('/settings/user') && location.pathname !== `/settings/user/${userId}`}
-            />
-          </List>
-        </>
-      )}
+          )}
+          <MenuItem
+            title={t('settingsUsers')}
+            link="/settings/users"
+            icon={<PeopleIcon />}
+            selected={location.pathname.startsWith('/settings/user') && location.pathname !== `/settings/user/${userId}`}
+          />
+        </List>
+      </>
+      {/* )} */}
     </>
   );
 };
