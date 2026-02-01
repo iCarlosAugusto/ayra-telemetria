@@ -27,7 +27,7 @@ const officialServers = [
   'https://demo3.traccar.org',
   'https://demo4.traccar.org',
   'https://server.traccar.org',
-  'https://ayra-telemetria-api.onrender.com',
+  'http://76.13.164.109',
   'http://localhost:3000',
 ].filter((value, index, self) => self.indexOf(value) === index);
 
