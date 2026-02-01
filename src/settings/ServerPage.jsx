@@ -58,7 +58,8 @@ const ServerPage = () => {
   });
 
   const handleSave = useCatch(async () => {
-    const response = await fetchOrThrow('/api/server', {
+    console.log("[TO-DO] Fix this - ServerPage ")
+    const response = await fetchOrThrow('/api/server/carlos-log', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(item),

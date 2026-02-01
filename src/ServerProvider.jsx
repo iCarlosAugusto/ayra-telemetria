@@ -18,6 +18,7 @@ const ServerProvider = ({
     if (!error) {
       try {
         // [TO-DO] Fix this
+        console.log('[TO-DO] Fix this - ServerProvider');
         const response = await fetch('/api/server/carlos-log');
         if (response.ok) {
           dispatch(sessionActions.updateServer(await response.json()));
