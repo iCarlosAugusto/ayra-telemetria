@@ -15,7 +15,6 @@ export default defineConfig(({ mode }) => {
           ws: true,
           changeOrigin: true,
           secure: false,
-          rewriteWsOrigin: true,
         },
         '/api': {
           target: "http://76.13.164.109:8082",
