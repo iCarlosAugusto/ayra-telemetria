@@ -247,16 +247,6 @@ const LoginPage = () => {
         )}
         {!openIdForced && (
           <div className={classes.extraContainer}>
-            {registrationEnabled && (
-              <Link
-                onClick={() => navigate('/register')}
-                className={classes.link}
-                underline="none"
-                variant="caption"
-              >
-                {t('loginRegister')}
-              </Link>
-            )}
             {emailEnabled && (
               <Link
                 onClick={() => navigate('/reset-password')}
