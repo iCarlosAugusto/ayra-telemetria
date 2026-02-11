@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { makeStyles } from 'tss-react/mui';
 import RemoveDialog from '../../common/components/RemoveDialog';
 import { useTranslation } from '../../common/components/LocalizationProvider';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles()(() => ({
   row: {
@@ -52,6 +53,8 @@ const CollectionActions = ({
     }
   };
 
+  const currentUser = useSelector((state) => state.session.user);
+
   return (
     <>
       {phone ? (
@@ -73,13 +76,18 @@ const CollectionActions = ({
         </>
       ) : (
         <div className={classes.row}>
-          {customActions && customActions.map((action) => (
-            <Tooltip title={action.title} key={action.key}>
-              <IconButton size="small" onClick={() => handleCustom(action)}>
-                {action.icon}
-              </IconButton>
-            </Tooltip>
-          ))}
+          {customActions && customActions.map((action) => {
+            if (action.key === "login" && itemId == currentUser.id) {
+              return null;
+            }
+            return (
+              <Tooltip title={action.title} key={action.key}>
+                <IconButton size="small" onClick={() => handleCustom(action)}>
+                  {action.icon}
+                </IconButton>
+              </Tooltip>
+            );
+          })}
           {!readonly && (
             <>
               {editPath && (
@@ -89,11 +97,14 @@ const CollectionActions = ({
                   </IconButton>
                 </Tooltip>
               )}
-              <Tooltip title={t('sharedRemove')}>
-                <IconButton size="small" onClick={handleRemove}>
-                  <DeleteIcon fontSize="small" />
-                </IconButton>
-              </Tooltip>
+
+              {currentUser.id != itemId && (
+                <Tooltip title={t('sharedRemove')}>
+                  <IconButton size="small" onClick={handleRemove}>
+                    <DeleteIcon fontSize="small" />
+                  </IconButton>
+                </Tooltip>
+              )}
             </>
           )}
         </div>
